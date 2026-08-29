@@ -16,6 +16,7 @@
             <ul>
                 <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#tamanhos">Tamanhos</a></li>
+                <li><a href="#precos">Fretes</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#cadastro">Cadastro</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -33,7 +34,7 @@
             <p> Leveza, conforto e estilo para bater o seu recorde. </p>
         </section>
 
-        <!-- EXERCÍCIO 2: Badges (Desconto / Lançamento) e Preço Riscado (<del>) -->
+        <!-- SEÇÃO DE PRODUTOS -->
         <section id="produtos">
             <h2> Nossos Tênis </h2>
             <div>
@@ -43,6 +44,7 @@
                     <h3> AeroRun Laranja </h3>
                     <p> Leveza para bater seu recorde.</p>
                     <p><del>R$ 429,90</del> <strong>R$ 349,90</strong></p>
+                    <button type="button" onclick="comprar('AeroRun Laranja', 349.90)">Comprar</button>
                 </article>
 
                 <article>
@@ -51,6 +53,7 @@
                     <h3> UrbanStep Azul </h3>
                     <p> O casual do dia a dia.</p>
                     <p> R$ 279,90 </p>
+                    <button type="button" onclick="comprar('UrbanStep Azul', 279.90)">Comprar</button>
                 </article>
 
                 <article>
@@ -58,10 +61,12 @@
                     <h3> TrailMax Verde </h3>
                     <p> Aderência para trilhas.</p>
                     <p> R$ 429,90 </p>
+                    <button type="button" onclick="comprar('TrailMax Verde', 429.90)">Comprar</button>
                 </article>
             </div>
         </section>
 
+        <!-- GUIA DE TAMANHOS -->
         <section id="tamanhos">
             <h2> Guia de Tamanhos </h2>
             <div>
@@ -104,6 +109,7 @@
             </div>
         </section>
 
+        <!-- FRETES E CALCULADORA DE FRETE DO EXERCÍCIO -->
         <section id="precos">
             <h2>Fretes e Prazos</h2>
             <div>
@@ -141,6 +147,25 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+                       <div class="calculadora-frete">
+                <h3>Simular Frete</h3>
+
+                <label for="valorCompra">Valor da compra (R$):</label>
+                <input type="number" id="valorCompra" placeholder="Ex.: 350">
+
+                <label for="regiao">Região de entrega:</label>
+                <select id="regiao">
+                    <option value="">Selecione</option>
+                    <option value="sudeste">Sudeste</option>
+                    <option value="sul">Sul</option>
+                    <option value="nordeste">Nordeste</option>
+                </select>
+
+                <button type="button" onclick="calcularFrete()">Calcular frete</button>
+
+                <p id="resultadoFrete"></p>
             </div>
         </section>
 
@@ -229,8 +254,8 @@
                         <input type="checkbox" id="termos" required>
                         <label for="termos">Li e aceito os termos e a política de privacidade (LGPD).</label>
                     </div>
-                    <div>
-                        <button type="submit">Cadastrar</button>
+                    <div style="margin-top: 15px;">
+                        <button type="button" onclick="cadastrar()">Cadastrar</button>
                         <button type="reset">Limpar</button>
                     </div>
                 </form>
@@ -243,6 +268,8 @@
         <p>&copy; 2026 SneakZone.</p>
         <address>contato@sneakzone.com.br - WhatsApp (21) 90000-0000</address>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 
