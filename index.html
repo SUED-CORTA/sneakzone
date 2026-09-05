@@ -4,128 +4,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>SneakZone</title>
-    <link rel="stylesheet" href="css/estilo.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <header>
-        <h1> Sneak<span>Zone</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#tamanhos">Tamanhos</a></li>
-                <li><a href="#precos">Fretes</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#cadastro">Cadastro</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
 
+            <a id="nome"class="navbar-brand" href="#">
+                <span id="sneak">Sneak</span>Zone
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">
+                            Produtos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tamanho">
+                            Tamanhos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#precos">
+                            Fretes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cadastro">
+                            Cadastro
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    
     <main>
-        <aside class="top-bar">
-            <p>⚡ Frete Grátis nas compras acima de R$ 299,00</p>
-        </aside>
+        <aside>
+            <div id="top-bar" class="alert alert-info" role="alert">
+                <span>⚡ Frete Grátis nas compras acima de R$ 299,00</span>
+            </div>
 
-        <section id="destaque">
+        </aside>        
+
+        <section id="destaque" class="container">
             <h2> A loja de tênis dos corredores </h2>
             <p> Leveza, conforto e estilo para bater o seu recorde. </p>
         </section>
 
-        <!-- SEÇÃO DE PRODUTOS -->
-        <section id="produtos">
+        <section id="produtos" class="container">
             <h2> Nossos Tênis </h2>
-            <div>
-                <article>
-                    <span class="badge desconto">Desconto</span>
+            <div class="row g-4">
+                <article class="col-12 col-md-4 border border-danger">
+                    <span class="badge">Desconto</span>
                     <img src="img/aerorun.jpg" alt="Tênis de corrida laranja modelo Aerorun">
                     <h3> AeroRun Laranja </h3>
                     <p> Leveza para bater seu recorde.</p>
-                    <p><del>R$ 429,90</del> <strong>R$ 349,90</strong></p>
-                    <button type="button" onclick="comprar('AeroRun Laranja', 349.90)">Comprar</button>
+                    <p><del>R$ 399,90</del> R$ 349,90</p>
+                    <button class="btn btn-outline-danger" type="button" onclick="comprar('TrailMax', 349,90)">Comprar</button>
                 </article>
-
-                <article>
-                    <span class="badge lancamento">Lançamento</span>
-                    <img src="img/urbanstep.jpg" alt="Tênis casual azul modelo UrbanStep">
+                <article class="col-12 col-md-4 border border-danger">
+                    <span class="badge">Desconto</span>
+                    <img src="img/urbanstep.jpg" alt="Tênis casual azul modelo UrbanStep" >
                     <h3> UrbanStep Azul </h3>
                     <p> O casual do dia a dia.</p>
-                    <p> R$ 279,90 </p>
-                    <button type="button" onclick="comprar('UrbanStep Azul', 279.90)">Comprar</button>
+                    <p> <del>R$ 279,90</del> R$230,00</p>
+                    <button class="btn btn-outline-danger" type="button" onclick="comprar('TrailMax', 230)">Comprar</button>
                 </article>
-
-                <article>
+                <article class="col-12 col-md-4 border border-warning">
+                    <span class="badge lancamento">lançamento</span>
                     <img src="img/courtpro.jpg" alt="Tênis de basquete verde modelo CourtPro">
                     <h3> TrailMax Verde </h3>
-                    <p> Aderência para trilhas.</p>
-                    <p> R$ 429,90 </p>
-                    <button type="button" onclick="comprar('TrailMax Verde', 429.90)">Comprar</button>
+                    <p> Aderencia para trilhas.</p>
+                    <p>R$ 429,90</p>
+                    <button class="btn btn-outline-danger" type="button" onclick="comprar('TrailMax', 429,90)">Comprar</button>
                 </article>
             </div>
+
         </section>
 
-        <!-- GUIA DE TAMANHOS -->
-        <section id="tamanhos">
-            <h2> Guia de Tamanhos </h2>
+
+
+        <section id="tamanho" class="container">
+            <h2>Guia de Tamanhos</h2>
             <div>
-                <table>
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">NUMERAÇÃO (BR)</th>
-                            <th scope="col">TAMANHO DO PÉ</th>
-                            <th scope="col">DISPONIBILIDADE</th>
+                            <th>Numeração (BR)</th>
+                            <th>Tamanho do pé</th>
+                            <th>Disponibilidade</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>33</td>
                             <td>22,0 cm</td>
-                            <td>Em Estoque</td>
+                            <td>Em estoque</td>
                         </tr>
                         <tr>
                             <td>34</td>
                             <td>22,7 cm</td>
-                            <td>Em Estoque</td>
+                            <td>Em estoque</td>
                         </tr>
                         <tr>
                             <td>35</td>
                             <td>23,3 cm</td>
-                            <td>Em Estoque</td>
+                            <td>Em estoque</td>
                         </tr>
                         <tr>
                             <td>36</td>
                             <td>24,0 cm</td>
-                            <td>Em Estoque</td>
+                            <td>Em estoque</td>
                         </tr>
                         <tr>
                             <td>37</td>
                             <td>24,7 cm</td>
-                            <td>Em Estoque</td>
+                            <td>Em estoque</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
         </section>
 
-        <!-- FRETES E CALCULADORA DE FRETE DO EXERCÍCIO -->
-        <section id="precos">
+        <section id="precos" class="container">
             <h2>Fretes e Prazos</h2>
             <div>
-                <table>
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Região</th>
                             <th scope="col">Prazo de entrega</th>
                             <th scope="col">Frete Padrão</th>
-                            <th scope="col">Frete grátis a partir de</th>
+                            <th scope="col">Frete grátis a patir de</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Sudeste</td>
-                            <td>2 a 4 dias úteis</td>
+                            <td> 2 a 4 dias úteis</td>
                             <td>R$ 19,90</td>
                             <td>R$ 299,00</td>
                         </tr>
@@ -133,7 +187,7 @@
                             <td>Sul</td>
                             <td>3 a 6 dias úteis</td>
                             <td>R$ 24,90</td>
-                            <td>R$ 299,00</td>
+                            <td> R$ 299,00</td>
                         </tr>
                         <tr>
                             <td>Nordeste</td>
@@ -148,117 +202,171 @@
                     </tbody>
                 </table>
             </div>
-
-                       <div class="calculadora-frete">
-                <h3>Simular Frete</h3>
-
-                <label for="valorCompra">Valor da compra (R$):</label>
-                <input type="number" id="valorCompra" placeholder="Ex.: 350">
-
-                <label for="regiao">Região de entrega:</label>
-                <select id="regiao">
-                    <option value="">Selecione</option>
-                    <option value="sudeste">Sudeste</option>
-                    <option value="sul">Sul</option>
-                    <option value="nordeste">Nordeste</option>
-                </select>
-
-                <button type="button" onclick="calcularFrete()">Calcular frete</button>
-
-                <p id="resultadoFrete"></p>
-            </div>
         </section>
 
-        <section id="sobre">
+        <section id="frete" class="container">
+            <h2 >Calculadora de Fretes</h2>
+            <p class="form-text">Informe o valor da compra e sua região para calcular o frete</p>
+            <label for="">Valor da compra</label>
+            <input type="number" id="valorCompra">
+            <label for="">Região de entrega</label>
+            <select id="regiao">
+                <option value="">Selecione</option>
+                <option value="sudeste">Sudeste</option>
+                <option value="sul">Sul</option>
+                <option value="nordeste">Nordeste</option>
+            </select>
+            <button class="btn btn-outline-success" type="button" onclick="calcularFrete()">
+                Calcular frete
+            </button>
+            <p id="resultado"></p>
+        </section>
+
+        <section id="sobre" class="container">
             <h2> Sobre a SneakZone</h2>
             <p>Nascemos em 2026 com a missão...</p>
+
             <aside>
                 <h3>Você sabia?</h3>
                 <p>O primeiro tênis esportivo surgiu em 1917.</p>
             </aside>
         </section>
 
-        <section id="faq">
+        <section id="faq" class="container">
             <h2> Dúvidas Frequentes</h2>
             <details>
                 <summary>Qual o prazo de entrega?</summary>
-                <p>3 a 7 dias úteis.</p>
+                <p> 3 a 7 dias úteis.</p>
             </details>
             <details>
                 <summary>Posso trocar?</summary>
-                <p>Sim, em até 30 dias.</p>
+                <p> Sim, em até 30 dias</p>
             </details>
         </section>
 
-        <section id="cadastro">
+        <section id="cadastro" class="container">
             <h2>Cadastro do Cliente</h2>
             <div>
-                <div id="mensagemSucesso" role="alert"></div>
-                <form id="formCadastro" novalidate>
+                <div>
                     <div>
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Ex.: Ana Paula Souza" required>
-                    </div>
-                    <div>
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="voce@email.com" required>
-                    </div>
-                    <div>
-                        <label for="telefone">Telefone (com DDD)</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(21) 90000-0000"
-                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" title="Use o formato (21) 90000-0000" required>
-                    </div>
-                    <div>
-                        <label for="idade">Idade</label>
-                        <input type="number" id="idade" name="idade" min="0" max="120" placeholder="Ex.: 25" required>
-                    </div>
-                    <div>
-                        <label for="numeracao">Numeração</label>
-                        <select id="numeracao" name="numeracao" required>
-                            <option value="" selected disabled>Escolha...</option>
-                            <option>36</option>
-                            <option>37</option>
-                            <option>38</option>
-                            <option>39</option>
-                            <option>40</option>
-                            <option>41</option>
-                            <option>42</option>
-                            <option>43</option>
-                            <option>44</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="cor">Cor preferida</label>
-                        <input type="color" id="cor" name="cor" value="#ff6b35">
-                    </div>
-                    <div>
-                        <span>Estilo favorito</span>
                         <div>
-                            <input type="radio" name="estilo" id="estiloEsportivo" value="Esportivo" checked>
-                            <label for="estiloEsportivo">Esportivo</label>
+                            <div id="mensagemSucesso" role="alert"></div>
+                            <form id="formCadastro" novalidate>
+                                <div class="row g-3">
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="nome">Nome completo</label>
+                                        <input type="text" id="nome" name="nome" placeholder="Ex.: Ana Paula Souza"
+                                            required>
+                                        <div class="form-text">Por favor, informe seu nome completo.</div>
+                                    </div>
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" placeholder="voce@email.com"
+                                            required>
+                                        <div class="form-text">Por favor, informe um e-mail válido.</div>
+                                    </div>
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="telefone">Telefone (com DDD)</label>
+                                        <input type="tel" id="telefone" name="telefone" placeholder="(21) 90000-0000"
+                                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" title="Use o formato (21) 90000-0000"
+                                            required>
+                                        <div class="form-text">Use o formato (21) 90000-0000.</div>
+                                    </div>
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="idade">Idade</label>
+                                        <input type="number" id="idade" name="idade" min="0" max="120"
+                                            placeholder="Ex.: 25" required>
+                                        <div class="form-text">Por favor, informe uma idade válida.</div>
+                                    </div>
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="numeracao">Numeração</label>
+                                        <select id="numeracao" name="numeracao" required>
+                                            <option value="" selected disabled>Escolha...</option>
+                                            <option>36</option>
+                                            <option>37</option>
+                                            <option>38</option>
+                                            <option>39</option>
+                                            <option>40</option>
+                                            <option>41</option>
+                                            <option>42</option>
+                                            <option>43</option>
+                                            <option>44</option>
+                                        </select>
+                                        <div class="form-text">Selecione uma numeração.</div>
+                                    </div>
+                                    <div class="campo col-12 col-md-6">
+                                        <label for="cor" class="form-label">Cor preferida</label>
+                                        <input type="color" id="cor" name="cor" value="#ff6b35">
+                                    </div>
+
+                                    <fieldset>
+                                        <legend>Estilo favorito</legend>
+
+                                        <div class="estilofavorito">
+                                            <div>
+                                                <input type="radio" id="estiloEsportivo"
+                                                    name="estilo" value="Esportivo">
+                                                <label for="estiloEsportivo">Esportivo</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="radio" id="estiloCasual"
+                                                    name="estilo" value="Casual">
+                                                <label for="estiloCasual">Casual</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset>
+                                        <legend>Tipos de tênis de interesse</legend>
+
+                                        <div class="tipostenis">
+                                            <div>
+                                                <input type="checkbox" id="tenisCorrida">
+                                                <label for="tenisCorrida">Corrida</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="checkbox" id="tenisCasual">
+                                                <label for="tenisCasual">Casual</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="checkbox" id="tenisBasquete">
+                                                <label for="tenisBasquete">Basquete</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="checkbox" id="tenisTrilha">
+                                                <label for="tenisTrilha">Trilha</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                        
+
+                                    <div>
+                                        <label for="mensagem">Alguma observação?</label>
+                                        <textarea id="mensagem" name="mensagem" rows="3"
+                                            placeholder="Conte o que você procura..."></textarea>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <input type="checkbox" id="termos" required>
+                                            <label for="termos">Li e aceito os termos e a política de privacidade
+                                                (LGPD).</label>
+                                            <div>Você precisa aceitar os termos para se cadastrar.</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-outline-primary" type="button" onclick="cadastrar()"><i></i> Cadastrar</button>
+                                        <button class="btn btn-outline-danger" type="reset">Limpar</button>
+                                    </div>
+                                </div>
+                            </form>
+
                         </div>
-                        <div>
-                            <input type="radio" name="estilo" id="estiloCasual" value="Casual">
-                            <label for="estiloCasual">Casual</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="estilo" id="estiloBasquete" value="Basquete">
-                            <label for="estiloBasquete">Basquete</label>
-                        </div>
                     </div>
-                    <div>
-                        <label for="mensagem">Alguma observação?</label>
-                        <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte o que você procura..."></textarea>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="termos" required>
-                        <label for="termos">Li e aceito os termos e a política de privacidade (LGPD).</label>
-                    </div>
-                    <div style="margin-top: 15px;">
-                        <button type="button" onclick="cadastrar()">Cadastrar</button>
-                        <button type="reset">Limpar</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
 
@@ -266,11 +374,15 @@
 
     <footer id="contato">
         <p>&copy; 2026 SneakZone.</p>
-        <address>contato@sneakzone.com.br - WhatsApp (21) 90000-0000</address>
+        <address>
+            <span id="emailrodape">contato@sneakzone.com.br</span> - 
+            <img src="img/whatsapp-logo.svg" alt="">
+            <span id="whatsapp">WhatsApp (21) 90000-0000</span>
+        </address>
     </footer>
 
     <script src="js/script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
